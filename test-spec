@@ -155,9 +155,9 @@ security:
 paths:
   /tasks:
     get:
-      summary: Get Tech Writer tasks
+      summary: Get technical writer tasks
       operationId: getTasks
-      description: Get all current technical writer tasks.
+      description: Get all current technical writer tasks. Narrow the results by using one or more filter parameters.
       parameters:
         - name: status
           in: query
@@ -210,12 +210,12 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
   /task:
     post:
-      summary: Add new Tech Writer task
+      summary: Create new Tech Writer task
       operationId: addTask
-      description: Create a new technical writer task.
+      description: Create a new technical writer task. By default, new tasks are sent to the Documentation Team's backlog for review and assignment.
       requestBody:
         required: true
-        description: Create a new task.
+        description: Create a new technical writer task.
         content:
           application/json:
             schema:
